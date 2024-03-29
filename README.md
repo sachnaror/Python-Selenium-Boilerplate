@@ -32,4 +32,3 @@ The project uses the following packages for code style formatting:
 * isort
 * black
 * pylint
-# Python-Selenium-Boilerplate
