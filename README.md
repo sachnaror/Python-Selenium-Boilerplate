@@ -1,4 +1,5 @@
-# Core Selenium Boilerplate Project (Python)
+
+# Python Selenium Boilerplate Project (Python)
 
 The repository contains a boilerplate project for a core Selenium framework with Python. "Core" would mean that the project supports the most fundamental
 
