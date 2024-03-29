@@ -1,3 +1,5 @@
+
+
 import os
 import subprocess
 import time
@@ -17,6 +19,11 @@ def apply_stash():
 def add_remote_origin(remote_url):
     # Run git remote add origin command to add the remote repository URL
     subprocess.run(['git', 'remote', 'add', 'origin', remote_url])
+
+
+def push_to_remote():
+    # Run git push command to push to the remote repository
+    subprocess.run(['git', 'push', '--set-upstream', 'origin', 'master'])
 
 
 def remove_remote_origin():
@@ -56,9 +63,15 @@ if __name__ == "__main__":
 
     stash_changes()  # Stash any local modifications
     add_remote_origin(remote_url)  # Add the remote origin
-    time.sleep(2)  # Sleep for 2 seconds
-    # Push to the remote repository
-    subprocess.run(['git', 'push', '--set-upstream', 'origin', 'master'])
+
+    # Sleep for 2 seconds
+    time.sleep(2)
+
+    push_to_remote()  # Push to the remote repository
+
+    # Sleep for 2 seconds
+    time.sleep(2)
+
     remove_signature_author()  # Remove signatures/authors and set commit dates
     remove_remote_origin()  # Remove the remote origin
     apply_stash()  # Apply the stashed changes back
