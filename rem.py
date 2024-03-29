@@ -1,6 +1,6 @@
-
 import os
 import subprocess
+import time
 from datetime import datetime
 
 
@@ -56,6 +56,9 @@ if __name__ == "__main__":
 
     stash_changes()  # Stash any local modifications
     add_remote_origin(remote_url)  # Add the remote origin
+    time.sleep(2)  # Sleep for 2 seconds
+    # Push to the remote repository
+    subprocess.run(['git', 'push', '--set-upstream', 'origin', 'master'])
     remove_signature_author()  # Remove signatures/authors and set commit dates
     remove_remote_origin()  # Remove the remote origin
     apply_stash()  # Apply the stashed changes back
