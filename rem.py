@@ -1,3 +1,4 @@
+
 import os
 import subprocess
 from datetime import datetime
@@ -11,6 +12,11 @@ def stash_changes():
 def apply_stash():
     # Run git stash apply command to apply the stashed changes back
     subprocess.run(['git', 'stash', 'apply'])
+
+
+def add_remote_origin(remote_url):
+    # Run git remote add origin command to add the remote repository URL
+    subprocess.run(['git', 'remote', 'add', 'origin', remote_url])
 
 
 def remove_remote_origin():
@@ -45,14 +51,11 @@ def remove_signature_author():
 
 
 if __name__ == "__main__":
-    # Check if rem.py is modified
-    with open('rem.py', 'r') as file:
-        file_contents = file.read()
-        if 'WIP on master' in file_contents:
-            print("Please commit or discard changes in rem.py before running the script.")
-            exit(1)
+    # Prompt the user for the remote repository URL
+    remote_url = input("Enter the remote repository URL: ")
 
     stash_changes()  # Stash any local modifications
-    remove_remote_origin()  # Remove the remote origin
+    add_remote_origin(remote_url)  # Add the remote origin
     remove_signature_author()  # Remove signatures/authors and set commit dates
+    remove_remote_origin()  # Remove the remote origin
     apply_stash()  # Apply the stashed changes back
