@@ -1,7 +1,9 @@
 # Core Selenium Boilerplate Project (Python)
 
-The repository contains a boilerplate project for a core Selenium framework with Python. "Core" would mean that the project supports the most fundamental 
+The repository contains a boilerplate project for a core Selenium framework with Python. "Core" would mean that the project supports the most fundamental
+
 parts of a UI framework with Selenium:
+
 * cross-browser support:
   - Chrome;
   - Firefox;
@@ -29,3 +31,4 @@ The project uses the following packages for code style formatting:
 * isort
 * black
 * pylint
+# Python-Selenium-Boilerplate
